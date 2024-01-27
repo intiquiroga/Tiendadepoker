@@ -11,7 +11,7 @@ import { Item } from '../Item/Item';
 
 function Bootnav() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar style={{display:"flex",justifyContent:"space-around"}}expand="lg" className="bg-body-tertiary">
       <Container fluid style={{display:"flex"}}>
         <Navbar.Brand href="#"><NavLink to= "producto">Productos</NavLink></Navbar.Brand>
         <Navbar.Collapse id="navbarScroll">

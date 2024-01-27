@@ -8,7 +8,7 @@ export const Item = () => {
 
     
     return (  
-    <div>
+    <div style={{display:"flex"}}>
        <Tarjetaproductos></Tarjetaproductos>
     </div>
   )
