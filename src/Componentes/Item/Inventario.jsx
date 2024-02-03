@@ -11,11 +11,11 @@ const Inventario = () => {
         { id :5 , category: "Fichas", price: 200000, image: "https://http2.mlstatic.com/D_NQ_NP_881177-MLA51359630130_082022-O.webp"},  
        ]);
   return (
-    <div style={{display:"flex"}}>
+    <div style={{display:"flex", width:"100%",justifyContent:"space-between"}}>
          {inventario.map ((inventarios) => {
          return (
-            <div style={{display:"flex"}}>
-               <Card style={{ width: '100%' }}>
+            <div style={{display:"flex",width:"100%",backgroundColor:"beige"}}>
+               <Card style={{ width: '100%', height:"100%",border:"3px solid aliceblue" }}>
                  <Card.Img style={{width:"100px"}} variant="top" src= {inventarios.image} />
                  <Card.Body>
                  <Card.Title>{inventarios.category} </Card.Title>
