@@ -1,36 +1,36 @@
-import { ItemList } from "../ItemList/ItemList"; 
-//import { Item } from "../Item/Item";
-//import { useState,useEffect } from "react";
-//import { useParams } from "react-router-dom";
 
+import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {db} from "../../service/config";
+import { collection ,getDocs,where,query } from "firebase/firestore";
+import ItemList from "../ItemList/ItemList";
 
+import React from 'react'
 
-export const ItemListContainer = () => {
-  // console.log (useParams());
-  // const {categoryId} = useParams ( arregloProductos );
-   //const [productos,setProductos] = useState ([]);
+const ItemListContainer = () => {
+   const [productos,setProductos]= useState ([]);
+   const {idCategoria} = useParams ();
 
-   //const promesa = new Promise((resolve, reject) => {
-       // setTimeout(() => { 
-      //  resolve (arregloProductos) 
-      // },2000); 
-      // })
+   useEffect (() => {
+      const misProductos = idCategoria ? query(collection(db,"inventario"),where("idCat", "==",idCategoria)) : collection (db,"inventario");
 
-   //useEffect (()=>{
-      // promesa.then((response)=> {
-      //     if (categoryId){
-          //     const productsFiltered = response.filter (elm=>elm.categoria === categoryId);
-        //       setProductos (productsFiltered);
-       //    } else {
-       //        setProductos (response)
-       //    }
-       //})
-      // },[])
-      //console.log ("productos",productos);
-      return(
-           <div style={{backgroundcolor:"blue", display:"flex",justifyContent:"center",marginTop:"100px"}}>
-              <p> item list container</p>
-              <ItemList/>
-           </div >
-   )
+      getDocs (misProductos)
+      .then (res => {
+        const nuevosProductos = res.docs.map (doc => {
+          const data = doc.data ();
+          return {id : doc.od , ...data};
+        })
+        setProductos(nuevosProductos);
+      })
+      .catch (error => console.log (error))
+
+   }, [idCategoria])
+
+  return (
+    <div>
+      <ItemList productos={productos}/>
+    </div>
+  )
 }
+
+export default ItemListContainer

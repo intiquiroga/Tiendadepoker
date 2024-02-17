@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { Item } from "../Item/Item";
-export const ItemList = () => {
+import React from 'react'
 
-       return(
-           <div>
-               <div style={{color:"black"}}>item list</div>
-               { Item.map( item=>(
-                      <li item key={productos.id}>{productos.category}</li> 
-                  ))
-                }
-           </div>
-        )
-    }
+const ItemList = ({productos}) => {
+  return (
+    <div>
+      <div style={{color:"black"}}>item list</div>
+      { productos?.map( prod=> <Item key={ prod.id} {...prod }/> )}
+    </div>
+  )
+}
+export default ItemList
+

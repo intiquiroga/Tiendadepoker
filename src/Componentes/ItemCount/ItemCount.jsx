@@ -28,3 +28,4 @@ const ItemCount = ({inicial,stock,agregar}) => {
 
 export default ItemCount
 // Agregar Valor inicial + Stock + una funcion para agergar productos al carrito 
+// Stock envia informacion desde Componente ITem
