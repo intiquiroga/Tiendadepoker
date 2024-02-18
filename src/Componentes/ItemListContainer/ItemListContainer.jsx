@@ -18,7 +18,7 @@ const ItemListContainer = () => {
       .then (res => {
         const nuevosProductos = res.docs.map (doc => {
           const data = doc.data ();
-          return {id : doc.od , ...data};
+          return {id : doc.id , ...data};
         })
         setProductos(nuevosProductos);
       })

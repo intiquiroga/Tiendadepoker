@@ -13,7 +13,7 @@ function Bootnav() {
   return (
     <Navbar style={{display:"flex",justifyContent:"space-around",width:"100%"}}expand="lg" className="bg-body-tertiary">
       <Container fluid style={{display:"flex", width:"100%",justifyContent:"space-evenly"}}>
-        <Navbar.Brand href="#"><NavLink to= "producto">Productos</NavLink></Navbar.Brand>
+        <Navbar.Brand href="#"><NavLink to= "Checkout">Productos</NavLink></Navbar.Brand>
         <Navbar.Brand href=""><NavLink to= "poker">Poker</NavLink></Navbar.Brand>
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0"navbarScroll>

@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <main style={{ backgroundColor:"beige",alignItems:"center", display:"flex", width:"100%",justifyContent:"space-between"}}>
-      <NavLink to="/Home"><img className='imagenlogo' src="https://cvagaming.com/assets/logo-8e1a9adf.png"/></NavLink>
+      <NavLink to="/checkout"><img className='imagenlogo' src="https://cvagaming.com/assets/logo-8e1a9adf.png"/></NavLink>
       <Bootnav></Bootnav>
-      <Cartwidget></Cartwidget>
+      <NavLink to="Checkout"><Cartwidget></Cartwidget></NavLink>
     </main>
   )
 }
